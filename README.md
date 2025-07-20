@@ -8,15 +8,6 @@ Additionally, the app exposes an HTTP endpoint that returns a plain-text summary
 
 ---
 
-## Features
-
-- Automatic database schema creation on first run if tables do not exist
-- Periodic scheduled data fetching and updating from the external API
-- HTTP endpoint to retrieve a text summary of the stored data
-- Configurable fetch interval through environment variables
-
----
-
 ## Setup and Installation
 
 1. **Clone the repository:**
