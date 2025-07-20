@@ -95,8 +95,8 @@ All configuration options are managed via environment variables, including:
 | `POSTGRES_USER`            | PostgreSQL username                          | *required*                      |
 | `POSTGRES_PASSWORD`        | PostgreSQL password                          | *required*                      |
 | `POSTGRES_DB`              | PostgreSQL database name                     | *required*                      |
-| `POSTGRES_HOST`            | Hostname or IP address of PostgreSQL server | `db` (service name in Compose)  |
+| `POSTGRES_HOST`            | Hostname or IP address of PostgreSQL server | *required* `db` (service name in Compose)  |
 | `POSTGRES_PORT`            | PostgreSQL port                              | *required*                          |
-| `DATA_REFRESH_INTERVAL_SECONDS` | Interval in seconds between data fetches | `3600` (1 hour)                 |
+| `DATA_REFRESH_INTERVAL_SECONDS` | Interval in seconds between data fetches | *required*                |
 
 ---
