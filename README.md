@@ -35,7 +35,6 @@ Additionally, the app exposes an HTTP endpoint that returns a plain-text summary
     POSTGRES_HOST=db
     POSTGRES_PORT=5432
 
-    API_URL=https://api.example.com/data
     DATA_REFRESH_INTERVAL_SECONDS=3600
     ```
 
@@ -56,7 +55,7 @@ This command will build the Docker image for the app, start the PostgreSQL datab
 - Access the HTTP summary endpoint by opening a browser and navigating to:
 
     ```
-    http://localhost:5555/info
+    GET http://localhost:5555/info
     ```
 
 This will display a plain-text report with aggregated data information such as product counts, categories, and marks
@@ -67,7 +66,7 @@ This will display a plain-text report with aggregated data information such as p
 
 To connect the application to an existing external PostgreSQL database instead of the one provided by Docker Compose:
 
-1. **Update your `.env` file** (or environment variables) with the external database credentials:
+1. **Update your `.env` file** with the external database credentials:
 
   ```env
   POSTGRES_HOST=<external-db-host>
