@@ -1,5 +1,3 @@
-from typing import ClassVar, Type
-
 from sqlalchemy import delete
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -12,7 +10,7 @@ from app.repository.base import BaseRepository
 
 
 class ParameterReposotory(BaseRepository):
-    model: ClassVar[Type[Parameter]] = Parameter
+    model = Parameter
 
     async def sync_product_parameters(
         self, session: AsyncSession, products: list[ProductIn]

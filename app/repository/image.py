@@ -1,5 +1,3 @@
-from typing import ClassVar, Type
-
 from sqlalchemy import delete
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -10,7 +8,7 @@ from app.repository.base import BaseRepository
 
 
 class ImageReposotory(BaseRepository):
-    model: ClassVar[Type[Image]] = Image
+    model = Image
 
     async def delete_old_images(self, session: AsyncSession, images: list[ImageIn]):
         images_by_product: dict[int, list[ImageIn]] = {}

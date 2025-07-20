@@ -1,5 +1,3 @@
-from typing import ClassVar, Type
-
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -13,7 +11,7 @@ from app.repository.parameter import ParameterReposotory
 
 
 class ProductRepository(BaseRepository):
-    model: ClassVar[Type[Product]] = Product
+    model = Product
 
     def __init__(self):
         self.image_repo = ImageReposotory()

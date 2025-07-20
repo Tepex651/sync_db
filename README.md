@@ -1,13 +1,3 @@
-# Data Fetcher and Database Updater Application
-
-## Overview
-
-This application periodically fetches data from an external API and updates it in the database. On the first run, if no data exists in the database, the app automatically creates all necessary tables with proper relationships and populates them with data retrieved from the API.
-
-Additionally, the app exposes an HTTP endpoint that returns a plain-text summary of the data currently stored in the database.
-
----
-
 ## Setup and Installation
 
 1. **Clone the repository:**

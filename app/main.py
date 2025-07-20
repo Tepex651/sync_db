@@ -5,18 +5,19 @@ import uvicorn
 from fastapi import FastAPI
 
 from app.api.v1.info import router as info_router
-from app.background.tasks import start_periodic_updates
 from app.config.logger import setup_logging
 from app.db.session import create_tables
 from app.middlewares.logger import LoggingMiddleware
+from app.service.update import UpdateService
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     setup_logging()
     await create_tables()
+    update_service = UpdateService()
 
-    task = asyncio.create_task(start_periodic_updates())
+    task = asyncio.create_task(update_service.run_periodic_updates())
     yield
     task.cancel()
     try:

@@ -1,5 +1,3 @@
-from typing import ClassVar, Type
-
 from sqlalchemy import delete
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -13,7 +11,7 @@ from .base import BaseRepository
 
 
 class CategoryRepository(BaseRepository):
-    model: ClassVar[Type[Category]] = Category
+    model = Category
 
     async def upsert(self, session: AsyncSession, categories: list[CategoryIn]):
         categories_dicts = [category.model_dump() for category in categories]

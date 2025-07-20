@@ -74,9 +74,13 @@ class UpdateService:
             await asyncio.sleep(self.refresh_interval_seconds)
 
     async def run_periodic_updates(self):
-        await asyncio.gather(
-            self.periodic_update_from_main(), self.periodic_update_from_second()
-        )
+        self.logger.info("Starting periodic updates...")
+        try:
+            await asyncio.gather(
+                self.periodic_update_from_main(), self.periodic_update_from_second()
+            )
+        except Exception:
+            self.logger.exception("Exception in periodic update service")
 
     async def get_info(self) -> InfoOut:
         async with session_context() as session:

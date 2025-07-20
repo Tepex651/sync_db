@@ -1,5 +1,3 @@
-from typing import ClassVar, Type
-
 from sqlalchemy import delete
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -12,7 +10,7 @@ from app.repository.base import BaseRepository
 
 
 class MarkRepository(BaseRepository):
-    model: ClassVar[Type[Mark]] = Mark
+    model = Mark
 
     async def upsert(self, session: AsyncSession, marks: list[MarkIn]):
         marks_dicts = [mark.model_dump() for mark in marks]

@@ -1,5 +1,3 @@
-from typing import ClassVar, Type
-
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -8,7 +6,7 @@ from app.repository.base import BaseRepository
 
 
 class ProjectParameterRepository(BaseRepository):
-    model: ClassVar[Type[SpecialProjectParameter]] = SpecialProjectParameter
+    model = SpecialProjectParameter
 
     async def upsert(
         self,
