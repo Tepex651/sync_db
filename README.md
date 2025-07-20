@@ -21,14 +21,6 @@ Additionally, the app exposes an HTTP endpoint that returns a plain-text summary
 
 1. **Clone the repository:**
 
-```bash
-git clone 
-cd sync_db
-
-## Setup and Installation
-
-1. **Clone the repository:**
-
     ```bash
     git clone git@github.com:Tepex651/sync_db.git
     cd sync_db
